@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Castor Task Manager</title>
+  <link rel="shortcut icon" href="favicon.gif" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css?v=1.0">
+</head>
+
+<body>
+  <!-- CONTENIDO PRINCIPAL-->
+  <div class="contenedor">
+    <h1><i class="fa fa-list"></i> Administrador de tareas</h1>
+    <hr>
+    <h3>Resueltas: <span id="n_resueltas">0</span> | Totales: <span id="n_totales">0</span></h3>
+    <div class="nueva_tarea_contenedor">
+      <input type="text" id="texto_tarea" placeholder="Ingresa el nombre de tu nueva tarea" />
+      <button class="btn" id="boton_agregar" onclick="nuevaTarea()">Agregar</button>
+    </div>
+
+    <div class="lista_tareas_contenedor">
+      <ul id="lista_tareas">
+        <!--<li><label class="checked"><input type="checkbox"> Regar las plantas</label><button><i class="fa fa-close"></i></button><button><i class="fa fa-pencil"></i></button></li>-->
+      </ul>
+      <div id="sin_tareas">
+        <span>Actualmente no tienes tareas pendientes</span>
+      </div> 
+    </div>
+  </div>
+
+  <!-- MODAL EDICION -->
+  <div class="modal_background" id="modal_edicion">
+    <div class="modal_container">
+      <i class="fa fa-close btn-close" onclick="cerrarModal();"></i>
+      <h1>Edición de tarea</h1>
+      <input type="hidden" id="id_tarea_editada">
+      <input type="text" id="edicion_tarea_text">
+      <button onclick="editar();">Editar</button>
+    </div>
+  </div>
+
+  <!-- MENSAJE CARGANDO (SACAR EL DISPLAY NONE)-->
+  <div id="loader_container" style="display:none;">
+    <div class="vertical_allign">
+      <h1>Cargando...</h1>
+    </div>
+  </div>
+
+  <script src="script.js?v=1.0"></script>
+</body>
+</html>
